@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TonerWatch.Core/1.0.0": {
+        "dependencies": {
+          "Lextm.SharpSnmpLib": "12.5.0"
+        },
+        "runtime": {
+          "TonerWatch.Core.dll": {}
+        }
+      },
+      "Lextm.SharpSnmpLib/12.5.0": {
+        "runtime": {
+          "lib/net6.0/SharpSnmpLib.dll": {
+            "assemblyVersion": "12.5.0.0",
+            "fileVersion": "12.5.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TonerWatch.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lextm.SharpSnmpLib/12.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WUCzUE3hOQ/WH/2GHbYkPZSc+aZuK8yf3m24BngLjZtLKwrwbOWjLTDTxNJNmdvOKsMZ0j5vArWrIAVVGi3bgQ==",
+      "path": "lextm.sharpsnmplib/12.5.0",
+      "hashPath": "lextm.sharpsnmplib.12.5.0.nupkg.sha512"
+    }
+  }
+}

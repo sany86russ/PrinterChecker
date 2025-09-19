@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "g4vh350ooOk=",
+  "success": true,
+  "projectFilePath": "d:\\PrinterChecker\\TonerWatch.Core\\TonerWatch.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\lextm.sharpsnmplib\\12.5.0\\lextm.sharpsnmplib.12.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

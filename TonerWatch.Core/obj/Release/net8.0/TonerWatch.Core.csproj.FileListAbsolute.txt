@@ -1,0 +1,11 @@
+D:\PrinterChecker\TonerWatch.Core\bin\Release\net8.0\TonerWatch.Core.deps.json
+D:\PrinterChecker\TonerWatch.Core\bin\Release\net8.0\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Core\bin\Release\net8.0\TonerWatch.Core.pdb
+D:\PrinterChecker\TonerWatch.Core\obj\Release\net8.0\TonerWatch.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrinterChecker\TonerWatch.Core\obj\Release\net8.0\TonerWatch.Core.AssemblyInfoInputs.cache
+D:\PrinterChecker\TonerWatch.Core\obj\Release\net8.0\TonerWatch.Core.AssemblyInfo.cs
+D:\PrinterChecker\TonerWatch.Core\obj\Release\net8.0\TonerWatch.Core.csproj.CoreCompileInputs.cache
+D:\PrinterChecker\TonerWatch.Core\obj\Release\net8.0\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Core\obj\Release\net8.0\refint\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Core\obj\Release\net8.0\TonerWatch.Core.pdb
+D:\PrinterChecker\TonerWatch.Core\obj\Release\net8.0\ref\TonerWatch.Core.dll
