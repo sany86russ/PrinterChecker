@@ -1,0 +1,17 @@
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWatch.Infrastructure.csproj.AssemblyReference.cache
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWatch.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWatch.Infrastructure.AssemblyInfoInputs.cache
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWatch.Infrastructure.AssemblyInfo.cs
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWatch.Infrastructure.csproj.CoreCompileInputs.cache
+D:\PrinterChecker\TonerWatch.Infrastructure\bin\Release\net8.0\TonerWatch.Infrastructure.deps.json
+D:\PrinterChecker\TonerWatch.Infrastructure\bin\Release\net8.0\TonerWatch.Infrastructure.runtimeconfig.json
+D:\PrinterChecker\TonerWatch.Infrastructure\bin\Release\net8.0\TonerWatch.Infrastructure.dll
+D:\PrinterChecker\TonerWatch.Infrastructure\bin\Release\net8.0\TonerWatch.Infrastructure.pdb
+D:\PrinterChecker\TonerWatch.Infrastructure\bin\Release\net8.0\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Infrastructure\bin\Release\net8.0\TonerWatch.Core.pdb
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWat.ACA65C56.Up2Date
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWatch.Infrastructure.dll
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\refint\TonerWatch.Infrastructure.dll
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWatch.Infrastructure.pdb
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\TonerWatch.Infrastructure.genruntimeconfig.cache
+D:\PrinterChecker\TonerWatch.Infrastructure\obj\Release\net8.0\ref\TonerWatch.Infrastructure.dll
