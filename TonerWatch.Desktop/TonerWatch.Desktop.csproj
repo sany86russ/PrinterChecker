@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TonerWatch.Core\TonerWatch.Core.csproj" />
+    <ProjectReference Include="..\TonerWatch.Infrastructure\TonerWatch.Infrastructure.csproj" />
+    <ProjectReference Include="..\TonerWatch.Discovery\TonerWatch.Discovery.csproj" />
+    <ProjectReference Include="..\TonerWatch.Protocols.SNMP\TonerWatch.Protocols.SNMP.csproj" />
+    <ProjectReference Include="..\TonerWatch.Protocols.IPP\TonerWatch.Protocols.IPP.csproj" />
+    <ProjectReference Include="..\TonerWatch.Protocols.HTTP\TonerWatch.Protocols.HTTP.csproj" />
+    <ProjectReference Include="..\TonerWatch.Protocols.PJL\TonerWatch.Protocols.PJL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.5.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
+    <PackageReference Include="QuestPDF" Version="2025.12.1" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.11" />
+  </ItemGroup>
+
+</Project>

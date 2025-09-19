@@ -1,0 +1,506 @@
+<Window x:Class="TonerWatch.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TonerWatch - Printer Supplies Monitor" 
+        Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType"
+        TextOptions.TextHintingMode="Fixed"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True">
+    
+    <Window.Resources>
+        <!-- Global TextBlock Style for Crisp Text Rendering -->
+        <Style TargetType="TextBlock">
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+            <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
+            <Setter Property="TextOptions.TextHintingMode" Value="Fixed"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled"/>
+        </Style>
+        
+        <!-- Global Button Style for Crisp Text Rendering -->
+        <Style TargetType="Button">
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+            <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+        </Style>
+        
+        <Style x:Key="CardStyle" TargetType="Border">
+            <Setter Property="Background" Value="#1E293B"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="20"/>
+            <Setter Property="Margin" Value="8"/>
+            <Setter Property="BorderBrush" Value="#334155"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="8" ShadowDepth="2" Opacity="0.2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="AccentButtonStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="#14B8A6"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="16,8"/>
+            <Setter Property="Margin" Value="6"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="8" 
+                                Padding="{TemplateBinding Padding}"
+                                UseLayoutRounding="True"
+                                SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#0F766E"/>
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.05" ScaleY="1.05" CenterX="0.5" CenterY="0.5"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="0.95" ScaleY="0.95" CenterX="0.5" CenterY="0.5"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="ModernProgressBar" TargetType="ProgressBar">
+            <Setter Property="Height" Value="8"/>
+            <Setter Property="Background" Value="#374151"/>
+            <Setter Property="Foreground" Value="#14B8A6"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="4">
+                            <Border Name="PART_Track" CornerRadius="4">
+                                <Border Name="PART_Indicator" 
+                                      Background="{TemplateBinding Foreground}" 
+                                      CornerRadius="4" 
+                                      HorizontalAlignment="Left">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="#14B8A6" BlurRadius="4" ShadowDepth="0" Opacity="0.3"/>
+                                    </Border.Effect>
+                                </Border>
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- Animation for status transitions -->
+        <Storyboard x:Key="StatusTransitionAnimation">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.3"/>
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" 
+                           From="0.8" To="1" Duration="0:0:0.3">
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" 
+                           From="0.8" To="1" Duration="0:0:0.3">
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid Background="#0F172A">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#1E293B" Padding="24,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Border Background="#14B8A6" CornerRadius="12" Width="48" Height="48" 
+                          VerticalAlignment="Center" Margin="0,0,16,0">
+                        <TextBlock Text="🖨️" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="TonerWatch" FontSize="28" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock Text="Мониторинг расходных материалов принтеров" FontSize="14" 
+                                 Foreground="#94A3B8" Margin="0,2,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button x:Name="RefreshButton" Content="🔄 Обновить" Style="{StaticResource AccentButtonStyle}" 
+                           Click="RefreshButton_Click"/>
+                    <Button Content="⚙️ Настройки" Style="{StaticResource AccentButtonStyle}" 
+                           Click="SettingsButton_Click"/>
+                    <Button Content="🌍 RU" Style="{StaticResource AccentButtonStyle}" 
+                           Click="LanguageButton_Click" ToolTip="Переключить язык"/>
+                    <Button Content="ℹ️ О программе" Style="{StaticResource AccentButtonStyle}" 
+                           Click="AboutButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        
+        <!-- Main Dashboard Content -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Grid Margin="24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <!-- KPI Cards -->
+                <UniformGrid Grid.Row="0" Rows="1" Columns="4" Margin="0,0,0,24">
+                    <!-- Total Devices -->
+                    <Border Style="{StaticResource CardStyle}" BorderBrush="#14B8A6" BorderThickness="0,0,0,4">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,16">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock x:Name="DeviceCountText" Text="0" FontSize="40" FontWeight="Bold" Foreground="White" Margin="0,0,0,4"/>
+                                    <TextBlock Text="Всего устройств" FontSize="14" Foreground="#94A3B8"/>
+                                </StackPanel>
+                                <Border Grid.Column="1" Background="#14B8A6" CornerRadius="25" 
+                                      Width="50" Height="50" VerticalAlignment="Top">
+                                    <TextBlock Text="🖨️" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                            <ProgressBar Value="0" Maximum="100" Style="{StaticResource ModernProgressBar}"/>
+                            <TextBlock x:Name="OnlineCountText" Text="0 онлайн" FontSize="12" Foreground="#14B8A6" 
+                                     HorizontalAlignment="Right" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Critical Supplies -->
+                    <Border Style="{StaticResource CardStyle}" BorderBrush="#EF4444" BorderThickness="0,0,0,4">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,16">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock x:Name="CriticalSuppliesCountText" Text="0" FontSize="40" FontWeight="Bold" Foreground="#EF4444" Margin="0,0,0,4"/>
+                                    <TextBlock Text="Критические запасы" FontSize="14" Foreground="#94A3B8"/>
+                                </StackPanel>
+                                <Border Grid.Column="1" Background="#EF4444" CornerRadius="25" 
+                                      Width="50" Height="50" VerticalAlignment="Top">
+                                    <TextBlock Text="⚠️" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                            <ProgressBar x:Name="CriticalSuppliesProgressBar" Value="0" Maximum="100" Style="{StaticResource ModernProgressBar}" 
+                                       Foreground="#EF4444"/>
+                            <TextBlock x:Name="CriticalSuppliesPercentText" Text="0% Критические" FontSize="12" Foreground="#EF4444" 
+                                     HorizontalAlignment="Right" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Active Alerts -->
+                    <Border Style="{StaticResource CardStyle}" BorderBrush="#F59E0B" BorderThickness="0,0,0,4">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,16">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock x:Name="AlertCountText" Text="0" FontSize="40" FontWeight="Bold" Foreground="#F59E0B" Margin="0,0,0,4"/>
+                                    <TextBlock Text="Активные уведомления" FontSize="14" Foreground="#94A3B8"/>
+                                </StackPanel>
+                                <Border Grid.Column="1" Background="#F59E0B" CornerRadius="25" 
+                                      Width="50" Height="50" VerticalAlignment="Top">
+                                    <TextBlock Text="🔔" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                            <ProgressBar x:Name="AlertsProgressBar" Value="0" Maximum="100" Style="{StaticResource ModernProgressBar}" 
+                                       Foreground="#F59E0B"/>
+                            <TextBlock x:Name="AlertsPercentText" Text="0% Активных" FontSize="12" Foreground="#F59E0B" 
+                                     HorizontalAlignment="Right" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Forecast -->
+                    <Border Style="{StaticResource CardStyle}" BorderBrush="#06B6D4" BorderThickness="0,0,0,4">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,16">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock x:Name="ForecastDaysText" Text="0" FontSize="40" FontWeight="Bold" Foreground="#06B6D4" Margin="0,0,0,4"/>
+                                    <TextBlock Text="Ср. дней осталось" FontSize="14" Foreground="#94A3B8"/>
+                                </StackPanel>
+                                <Border Grid.Column="1" Background="#06B6D4" CornerRadius="25" 
+                                      Width="50" Height="50" VerticalAlignment="Top">
+                                    <TextBlock Text="📈" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                            <ProgressBar x:Name="ForecastProgressBar" Value="0" Maximum="100" Style="{StaticResource ModernProgressBar}" 
+                                       Foreground="#06B6D4"/>
+                            <TextBlock x:Name="ForecastPercentText" Text="0% Здоровых" FontSize="12" Foreground="#06B6D4" 
+                                     HorizontalAlignment="Right" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </UniformGrid>
+                
+                <!-- Devices and Alerts Section -->
+                <Grid Grid.Row="1" Margin="0,0,0,24">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Devices List -->
+                    <Border Grid.Column="0" Style="{StaticResource CardStyle}">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="Устройства в мониторинге" FontSize="18" FontWeight="Bold" 
+                                         Foreground="White"/>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                    <Button Grid.Column="1" Content="🔍 Поиск устройств" Style="{StaticResource AccentButtonStyle}" 
+                                           Background="#3B82F6" Click="SearchDevicesButton_Click" FontSize="12" Padding="12,6" Margin="0,0,8,0"/>
+                                    <Button Grid.Column="1" Content="➕ Добавить" Style="{StaticResource AccentButtonStyle}" 
+                                           Background="#10B981" Click="AddDeviceButton_Click" FontSize="12" Padding="12,6"/>
+                                </StackPanel>
+                            </Grid>
+                            
+                            <!-- Bulk Operations Panel -->
+                            <Border x:Name="BulkOperationsPanel" Background="#374151" CornerRadius="8" Padding="12" 
+                                   Margin="0,0,0,16" Visibility="Collapsed">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="Выбрано: " FontSize="12" Foreground="#94A3B8" 
+                                             VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="SelectedDevicesCountText" Grid.Column="1" Text="0 устройств" 
+                                             FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="4,0"/>
+                                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                        <Button Content="🔄 Обновить" Style="{StaticResource ActionButtonStyle}" 
+                                               Background="#3B82F6" FontSize="11" Padding="8,4" Margin="0,0,4,0"
+                                               Click="BulkRefreshButton_Click"/>
+                                        <Button Content="🗑️ Удалить" Style="{StaticResource ActionButtonStyle}" 
+                                               Background="#EF4444" FontSize="11" Padding="8,4"
+                                               Click="BulkDeleteButton_Click"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            
+                            <!-- Device Grouping Controls -->
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                                <TextBlock Text="Группировка:" FontSize="12" Foreground="#94A3B8" 
+                                         VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                <ComboBox x:Name="GroupingComboBox" SelectedIndex="0" 
+                                        Style="{StaticResource ModernComboBoxStyle}" 
+                                        Width="150" Height="28" FontSize="12"
+                                        SelectionChanged="GroupingComboBox_SelectionChanged">
+                                    <ComboBoxItem Content="Без группировки"/>
+                                    <ComboBoxItem Content="По местоположению"/>
+                                    <ComboBoxItem Content="По статусу"/>
+                                    <ComboBoxItem Content="По сети"/>
+                                </ComboBox>
+                            </StackPanel>
+                            
+                            <!-- Dynamic Devices List -->
+                            <ItemsControl x:Name="DevicesListControl">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="#374151" CornerRadius="8" Padding="16" Margin="0,0,0,12"
+                                                RenderTransformOrigin="0.5,0.5">
+                                            <Border.RenderTransform>
+                                                <ScaleTransform/>
+                                            </Border.RenderTransform>
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Style.Triggers>
+                                                        <EventTrigger RoutedEvent="Loaded">
+                                                            <BeginStoryboard Storyboard="{StaticResource StatusTransitionAnimation}"/>
+                                                        </EventTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                </Grid.ColumnDefinitions>
+                                                
+                                                <!-- Selection Checkbox -->
+                                                <CheckBox Grid.Column="0" VerticalAlignment="Center" Margin="0,0,12,0"
+                                                        Checked="DeviceCheckBox_Checked" Unchecked="DeviceCheckBox_Unchecked"
+                                                        Tag="{Binding}"/>
+                                                
+                                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                                    <TextBlock Text="{Binding Name}" FontSize="16" FontWeight="Bold" Foreground="White"/>
+                                                    <TextBlock Text="{Binding LocationAndIp}" FontSize="12" Foreground="#94A3B8" Margin="0,2,0,0"/>
+                                                    <StackPanel x:Name="SupplyPanel" Orientation="Horizontal" Margin="0,4,0,0">
+                                                        <!-- Supply levels will be populated dynamically -->
+                                                    </StackPanel>
+                                                    
+                                                    <!-- SNMP Information -->
+                                                    <StackPanel Orientation="Horizontal" Margin="0,4,0,0" Visibility="{Binding HasSnmpInfo, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                        <TextBlock Text="📡" FontSize="10" Foreground="#94A3B8" Margin="0,0,4,0"/>
+                                                        <TextBlock Text="{Binding SnmpInfo}" FontSize="10" Foreground="#94A3B8"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                
+                                                <Border Grid.Column="2" Background="{Binding StatusColor}" Padding="8,4" 
+                                                       VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="4">
+                                                    <TextBlock Text="{Binding StatusText}" FontSize="10" Foreground="White" FontWeight="Bold"/>
+                                                </Border>
+                                                
+                                                <Button Grid.Column="3" Content="👁️ Просмотр" Background="#14B8A6" Foreground="White" 
+                                                       Padding="8,6" FontSize="10" BorderThickness="0" Cursor="Hand" 
+                                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                       Click="ViewDeviceButton_Click" Tag="{Binding}"/>
+                                                <Button Grid.Column="4" Content="🗑️ Удалить" Background="#EF4444" Foreground="White" 
+                                                       Padding="8,6" FontSize="10" BorderThickness="0" Cursor="Hand" 
+                                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                       Click="RemoveDeviceButton_Click" Tag="{Binding}"/>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            
+                            <!-- No Devices Message -->
+                            <Border x:Name="NoDevicesMessage" Background="#374151" CornerRadius="8" Padding="20" 
+                                   Visibility="Collapsed">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <TextBlock Text="🖨️" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                                    <TextBlock Text="Нет устройств для мониторинга" FontSize="16" FontWeight="Bold" 
+                                             Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                                    <TextBlock Text="Добавьте принтеры для начала мониторинга расходных материалов" 
+                                             FontSize="12" Foreground="#94A3B8" HorizontalAlignment="Center" 
+                                             TextWrapping="Wrap" TextAlignment="Center" Margin="0,0,0,16"/>
+                                    <Button Content="➕ Добавить первое устройство" Style="{StaticResource AccentButtonStyle}" 
+                                           HorizontalAlignment="Center" Click="AddDeviceButton_Click"/>
+                                </StackPanel>
+                            </Border>
+                            
+                            <!-- Add Device Button (when devices exist) -->
+                            <Button x:Name="AddDeviceButtonMain" Content="➕ Добавить устройство" Style="{StaticResource AccentButtonStyle}" 
+                                   HorizontalAlignment="Left" Margin="0,8,0,0" Click="AddDeviceButton_Click" Visibility="Collapsed"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Recent Alerts -->
+                    <Border Grid.Column="1" Style="{StaticResource CardStyle}">
+                        <StackPanel>
+                            <TextBlock Text="Последние уведомления" FontSize="18" FontWeight="Bold" 
+                                     Foreground="White" Margin="0,0,0,20"/>
+                            
+                            <!-- Dynamic Alerts List -->
+                            <ItemsControl x:Name="AlertsListControl">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="{Binding BackgroundColor}" Padding="12" Margin="0,0,0,8"
+                                                RenderTransformOrigin="0.5,0.5">
+                                            <Border.RenderTransform>
+                                                <ScaleTransform/>
+                                            </Border.RenderTransform>
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Style.Triggers>
+                                                        <EventTrigger RoutedEvent="Loaded">
+                                                            <BeginStoryboard Storyboard="{StaticResource StatusTransitionAnimation}"/>
+                                                        </EventTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal" Margin="0,0,0,4">
+                                                    <Ellipse Width="8" Height="8" Fill="{Binding SeverityColor}" VerticalAlignment="Top" Margin="0,4,8,0"/>
+                                                    <TextBlock Text="{Binding SeverityText}" FontSize="9" FontWeight="Bold" Foreground="{Binding SeverityColor}" 
+                                                             VerticalAlignment="Top" Margin="0,0,8,0"/>
+                                                    <TextBlock Text="{Binding TimeAgo}" FontSize="9" Foreground="#94A3B8" VerticalAlignment="Top"/>
+                                                </StackPanel>
+                                                <TextBlock Text="{Binding Message}" 
+                                                         FontSize="11" Foreground="White" TextWrapping="Wrap"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            
+                            <!-- No Alerts Message -->
+                            <Border x:Name="NoAlertsMessage" Background="#374151" CornerRadius="8" Padding="20" 
+                                   Visibility="Collapsed">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <TextBlock Text="🔔" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,12"/>
+                                    <TextBlock Text="Нет активных уведомлений" FontSize="16" FontWeight="Bold" 
+                                             Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                                    <TextBlock Text="Система не обнаружила критических проблем с устройствами" 
+                                             FontSize="12" Foreground="#94A3B8" HorizontalAlignment="Center" 
+                                             TextWrapping="Wrap" TextAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+        
+        <!-- Status Bar -->
+        <Border Grid.Row="2" Background="#1E293B" Padding="20,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock x:Name="StatusText" Grid.Column="0" Text="🟢 Мониторинг активен - Система готова" 
+                         FontSize="12" Foreground="#94A3B8" VerticalAlignment="Center"/>
+                
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="TonerWatch Desktop v1.0.0" FontSize="12" 
+                             Foreground="#94A3B8" Margin="0,0,12,0"/>
+                    <Border Background="#14B8A6" CornerRadius="4" Padding="6,2">
+                        <TextBlock Text="РАБОТАЕТ" FontSize="10" Foreground="White" FontWeight="Bold"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
