@@ -1,0 +1,15 @@
+D:\PrinterChecker\TonerWatch.Protocols.PJL\bin\Debug\net8.0\TonerWatch.Protocols.PJL.deps.json
+D:\PrinterChecker\TonerWatch.Protocols.PJL\bin\Debug\net8.0\TonerWatch.Protocols.PJL.dll
+D:\PrinterChecker\TonerWatch.Protocols.PJL\bin\Debug\net8.0\TonerWatch.Protocols.PJL.pdb
+D:\PrinterChecker\TonerWatch.Protocols.PJL\bin\Debug\net8.0\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Protocols.PJL\bin\Debug\net8.0\TonerWatch.Core.pdb
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\TonerWatch.Protocols.PJL.csproj.AssemblyReference.cache
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\TonerWatch.Protocols.PJL.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\TonerWatch.Protocols.PJL.AssemblyInfoInputs.cache
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\TonerWatch.Protocols.PJL.AssemblyInfo.cs
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\TonerWatch.Protocols.PJL.csproj.CoreCompileInputs.cache
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\TonerWat.03F9BDFF.Up2Date
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\TonerWatch.Protocols.PJL.dll
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\refint\TonerWatch.Protocols.PJL.dll
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\TonerWatch.Protocols.PJL.pdb
+D:\PrinterChecker\TonerWatch.Protocols.PJL\obj\Debug\net8.0\ref\TonerWatch.Protocols.PJL.dll
