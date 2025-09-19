@@ -1,0 +1,15 @@
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\TonerWatch.Protocols.IPP.csproj.AssemblyReference.cache
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\TonerWatch.Protocols.IPP.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\TonerWatch.Protocols.IPP.AssemblyInfoInputs.cache
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\TonerWatch.Protocols.IPP.AssemblyInfo.cs
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\TonerWatch.Protocols.IPP.csproj.CoreCompileInputs.cache
+D:\PrinterChecker\TonerWatch.Protocols.IPP\bin\Debug\net8.0\TonerWatch.Protocols.IPP.deps.json
+D:\PrinterChecker\TonerWatch.Protocols.IPP\bin\Debug\net8.0\TonerWatch.Protocols.IPP.dll
+D:\PrinterChecker\TonerWatch.Protocols.IPP\bin\Debug\net8.0\TonerWatch.Protocols.IPP.pdb
+D:\PrinterChecker\TonerWatch.Protocols.IPP\bin\Debug\net8.0\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Protocols.IPP\bin\Debug\net8.0\TonerWatch.Core.pdb
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\TonerWat.6AA35F7D.Up2Date
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\TonerWatch.Protocols.IPP.dll
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\refint\TonerWatch.Protocols.IPP.dll
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\TonerWatch.Protocols.IPP.pdb
+D:\PrinterChecker\TonerWatch.Protocols.IPP\obj\Debug\net8.0\ref\TonerWatch.Protocols.IPP.dll

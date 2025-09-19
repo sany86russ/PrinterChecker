@@ -1,0 +1,15 @@
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\bin\Debug\net8.0\TonerWatch.Protocols.HTTP.deps.json
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\bin\Debug\net8.0\TonerWatch.Protocols.HTTP.dll
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\bin\Debug\net8.0\TonerWatch.Protocols.HTTP.pdb
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\bin\Debug\net8.0\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\bin\Debug\net8.0\TonerWatch.Core.pdb
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\TonerWatch.Protocols.HTTP.csproj.AssemblyReference.cache
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\TonerWatch.Protocols.HTTP.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\TonerWatch.Protocols.HTTP.AssemblyInfoInputs.cache
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\TonerWatch.Protocols.HTTP.AssemblyInfo.cs
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\TonerWatch.Protocols.HTTP.csproj.CoreCompileInputs.cache
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\TonerWat.1BFD34C3.Up2Date
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\TonerWatch.Protocols.HTTP.dll
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\refint\TonerWatch.Protocols.HTTP.dll
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\TonerWatch.Protocols.HTTP.pdb
+D:\PrinterChecker\TonerWatch.Protocols.HTTP\obj\Debug\net8.0\ref\TonerWatch.Protocols.HTTP.dll

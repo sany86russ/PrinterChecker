@@ -1,0 +1,17 @@
+D:\PrinterChecker\TonerWatch.Discovery\bin\Release\net8.0\TonerWatch.Discovery.deps.json
+D:\PrinterChecker\TonerWatch.Discovery\bin\Release\net8.0\TonerWatch.Discovery.dll
+D:\PrinterChecker\TonerWatch.Discovery\bin\Release\net8.0\TonerWatch.Discovery.pdb
+D:\PrinterChecker\TonerWatch.Discovery\bin\Release\net8.0\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Discovery\bin\Release\net8.0\TonerWatch.Protocols.SNMP.dll
+D:\PrinterChecker\TonerWatch.Discovery\bin\Release\net8.0\TonerWatch.Core.pdb
+D:\PrinterChecker\TonerWatch.Discovery\bin\Release\net8.0\TonerWatch.Protocols.SNMP.pdb
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\TonerWatch.Discovery.csproj.AssemblyReference.cache
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\TonerWatch.Discovery.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\TonerWatch.Discovery.AssemblyInfoInputs.cache
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\TonerWatch.Discovery.AssemblyInfo.cs
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\TonerWatch.Discovery.csproj.CoreCompileInputs.cache
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\TonerWat.87EFDA16.Up2Date
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\TonerWatch.Discovery.dll
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\refint\TonerWatch.Discovery.dll
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\TonerWatch.Discovery.pdb
+D:\PrinterChecker\TonerWatch.Discovery\obj\Release\net8.0\ref\TonerWatch.Discovery.dll

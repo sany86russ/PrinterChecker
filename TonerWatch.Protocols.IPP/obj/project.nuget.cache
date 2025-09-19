@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "rLDZzJ7p8ZM=",
+  "success": true,
+  "projectFilePath": "D:\\PrinterChecker\\TonerWatch.Protocols.IPP\\TonerWatch.Protocols.IPP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\lextm.sharpsnmplib\\12.5.0\\lextm.sharpsnmplib.12.5.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
