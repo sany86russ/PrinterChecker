@@ -1,0 +1,15 @@
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\TonerWatch.Protocols.SNMP.csproj.AssemblyReference.cache
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\TonerWatch.Protocols.SNMP.GeneratedMSBuildEditorConfig.editorconfig
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\TonerWatch.Protocols.SNMP.AssemblyInfoInputs.cache
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\TonerWatch.Protocols.SNMP.AssemblyInfo.cs
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\TonerWatch.Protocols.SNMP.csproj.CoreCompileInputs.cache
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\bin\Debug\net8.0\TonerWatch.Protocols.SNMP.deps.json
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\bin\Debug\net8.0\TonerWatch.Protocols.SNMP.dll
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\bin\Debug\net8.0\TonerWatch.Protocols.SNMP.pdb
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\bin\Debug\net8.0\TonerWatch.Core.dll
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\bin\Debug\net8.0\TonerWatch.Core.pdb
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\TonerWat.83997480.Up2Date
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\TonerWatch.Protocols.SNMP.dll
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\refint\TonerWatch.Protocols.SNMP.dll
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\TonerWatch.Protocols.SNMP.pdb
+D:\PrinterChecker\TonerWatch.Protocols.SNMP\obj\Debug\net8.0\ref\TonerWatch.Protocols.SNMP.dll
